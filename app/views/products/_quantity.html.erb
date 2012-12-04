@@ -1,3 +1,20 @@
+<div id = "quantityInput">
+	<%= form_tag(line_items_path(:id => session[:product][@product.id][:id]),:method => "post") do %> 
+		<ul>
+			<li>
+				<label for="quantity">Number of items</label>
+				<%= number_field_tag :quantity, session[:product][@product.id][:quantity],:min => 1, :max => 100%>
+			</li>
+			<li>
+				<%= submit_tag "Add to cart"%>
+			</li>
+		</ul>
+	<% end %>
+</div>
+				
+
+
+<!--
 <div id= "quantityMinus">
 	<%= button_to "-", decrement_product_path(session[:product][@product.id]), :method =>:put, :remote => true%>
 </div>
@@ -15,4 +32,4 @@
 	  <%= submit_tag "Add to cart"%>
 	</div>
 <% end %>
-
+//-->

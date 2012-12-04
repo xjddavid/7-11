@@ -297,9 +297,16 @@ font-size:11px
 	float:Right;
 }
 
-#quantityInput{
+#quantityInput {
 	margin:0 auto;
-	width:50px;
+	width:150px;
 }
 
+#quantityInput ul {
+	list-style-type:none;
+}
+
+#quantityInput ul li label{
+	font-size: 15px;
+}
 
