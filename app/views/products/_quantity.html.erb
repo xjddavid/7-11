@@ -1,0 +1,18 @@
+<div id= "quantityMinus">
+	<%= button_to "-", decrement_product_path(session[:product][@product.id]), :method =>:put, :remote => true%>
+</div>
+
+<div id= "quantityPlus">
+	<%= button_to "+", increase_product_path(session[:product][@product.id]), :method =>:put, :remote => true, :class => "quantityPlus"%>
+</div>
+
+<%= form_tag(line_items_path(:id => session[:product][@product.id][:id]),:method => "post") do %> 
+	<div id= "quantityInput">
+	  <%= text_field_tag :quantity, session[:product][@product.id][:quantity],:size => 3%>
+	</div>	
+	<br/>
+	<div class="quantityInput">
+	  <%= submit_tag "Add to cart"%>
+	</div>
+<% end %>
+

@@ -1,0 +1,45 @@
+<h1>Contact information</h1>
+
+<table>
+  <tr>
+    <td>
+      <%= image_tag("logo.png", class: 'list_image') %>
+    </td>
+  </tr>
+
+	<tr>
+    <td>
+      <dl>
+        <dt>Name</dt>
+        <dd><%= @contact.name%></dd>
+      </dl>
+    </td>
+  </tr>
+  
+	<tr>
+    <td>
+      <dl>
+        <dt>Address</dt>
+        <dd><%= @contact.address%></dd>
+      </dl>
+    </td>
+  </tr>
+
+	<tr>
+    <td>
+      <dl>
+        <dt>Contact phone number</dt>
+        <dd><%= @contact.number%></dd>
+      </dl>
+    </td>
+  </tr>
+  
+ 	<tr>
+    <td>
+      <dl>
+        <dt>Email</dt>
+        <dd><%= @contact.email%></dd>
+      </dl>
+    </td>
+  </tr>
+</table>

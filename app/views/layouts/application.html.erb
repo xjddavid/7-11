@@ -1,0 +1,71 @@
+<!-- START:head -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>7 Days 11 Hours Online Store</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<!-- END:head -->
+<body class="<%= controller.controller_name %>">
+	<div id="header">																																																																								
+		<div id="header_inside">
+			<%= image_tag("header.jpg",:alt=>"header", :width=>"999", :height=>"222", :border=>"0", :usemap=>"#Map") %> <br />																																										
+			<ul id="menu">
+				<li><%= link_to t('.home'), store_url, :class=>"but1"%></li>
+				<li><a href="index2.html" class="but2">About Us</a></li>
+				<li><a href="index2.html" class="but3">News &amp; Events</a></li>
+				<li><a href="index2.html" class="but4">Services</a></li>
+				<li><a href="localhost:3000/login" class="but5">My Account</a></li>
+				<li><%= link_to t('.contact'), contacts_path, :class=>"but6"%></li>
+			</ul>
+		</div>
+	</div>
+	
+  <div id="wrapper">
+  	<div id="content_inside">
+			<div id="sidebar">
+				<!-- START:hidden_div -->
+		      <% if @cart %>
+		        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+		          <%= render @cart %>
+		        <% end %>
+		      <% end %>
+		    <!-- END:hidden_div -->
+				<img src="title1.gif" alt="" width="174" height="30" /><br />																																																																		
+				<ul id="list">
+					<li class="color"><a href="#">Illum secundum</a></li>
+					<li><a href="#">Tamen causa ut diam</a></li>
+					<li class="color"><a href="#">Appellatio vel hos autem</a></li>
+					<li><a href="#">Consequat</a></li>
+					<li class="color"><a href="#">Nibh valde tincidunt</a></li>
+					<li><a href="#">Illum secundum</a></li>
+					<li class="color"><a href="#">Appellatio vel</a></li>
+					<li><a href="#">Illum secundum</a></li>
+					<!-- START_login -->      
+		      <% unless session[:user_id]%>
+		      	<br />
+		      	<li><%= link_to 'Login', login_url%></li>
+		      	<li><%= link_to 'Register', register_url%></li>
+		      	<br />
+		      <% end %>
+					<!-- END_login -->
+		      <% if session[:user_id] %>
+	          <li><%= link_to 'Orders',   orders_path   %></li>
+	          <% if User.find_by_id(session[:user_id]).user_type == "admin"%>
+		          <li><%= link_to 'Products', products_path %></li>
+		          <li><%= link_to 'Users',    users_path    %></li>
+	          <% end %>
+		        <li> <%= button_to 'Logout', logout_path, method: :delete   %> </li>
+		      <% end %>
+		    </ul>
+    	</div>
+    	
+	    <div id="main_block">
+	      <%= yield %>
+	    </div>
+	  </div>
+  </div>
+</body>
+</html>

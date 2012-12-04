@@ -1,0 +1,62 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+	
+<div id="wrapper">																																																																																																				
+	<div id="content_inside">
+		<div id="main_block" class="style1">																																																																													
+			<div id="item">
+				<h4><%= @product.title%></h4><br />
+				<div class="big_view">
+					<%=image_tag(@product.image_url, :alt => "", :width=>"311", :height=>"319")%><br />
+					<span><%= @product.price %></span>
+				</div>
+				<div class="scroll">
+					<a href="#"><img src="images/pic1.jpg" alt="" width="62" height="62" /></a>
+					<a href="#"><img src="images/pic2.jpg" alt="" width="62" height="62" /></a>
+					<a href="#"><img src="images/pic3.jpg" alt="" width="62" height="62" /></a>
+					<a href="#"><img src="images/pic4.jpg" alt="" width="62" height="62" /></a>
+					<a href="#"><img src="images/pic5.jpg" alt="" width="62" height="62" /></a>
+					<a href="#"><img src="images/pic6.jpg" alt="" width="62" height="62" /></a>
+				</div>
+			</div>
+			<div class="description">
+				<p>
+					<strong><%= @product.features%></strong><br /> 
+					<%= sanitize(@product.description) %> 
+				</p>
+				<div id= "quantity">
+					<p>
+						<%= render 'quantity'%>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p>
+  <b>Title:</b>
+  <%= @product.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @product.image_url %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @product.price %>
+</p>
+
+<% if session[:user_id] and User.find_by_id(session[:user_id]).user_type == "admin"%>
+	<%= link_to 'Edit', edit_product_path(@product) %> |
+	<%= link_to 'Back', products_path %>
+<% end %>
+

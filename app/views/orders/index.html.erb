@@ -1,0 +1,44 @@
+<h1>Listing orders</h1>
+
+<table>
+  <tr>
+    <th>Receiver's Name</th>
+    <th>Products</th>
+    <th>Price</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Pay type</th>
+    <th>Status</th>
+    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.name %></td>
+    <td><% order.line_items.each do |item|%>
+    			<li> <%=item.quantity %> x <%= Product.find_by_id(item.product_id).title%> </li>
+    		<% end %></td>
+    <td><%= order.total_price %></td>
+    <td><%= order.address %></td>
+    <td><%= order.email %></td>
+    <td><%= order.pay_type %></td>
+    <td><%= order.status %></td>
+    <td><%= link_to 'Show', order %></td>
+    <% if User.find_by_id(session[:user_id]).user_type == "admin"%>
+    	<td><%= link_to 'Edit', edit_order_path(order) %></td>
+    	<td><%= link_to 'Destroy', order, method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order', new_order_path %>
+<!-- START_HIGHLIGHT -->
+<p><%= will_paginate @orders %></p>
+<!-- END_HIGHLIGHT -->
