@@ -6,9 +6,36 @@
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
+  <script>
+  	$(window).load(function() {    
+
+			var theWindow        = $(window),
+			    $bg              = $("#bg"),
+			    aspectRatio      = $bg.width() / $bg.height();
+			    			    		
+			function resizeBg() {
+				
+				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+				    $bg
+				    	.removeClass()
+				    	.addClass('bgheight');
+				} else {
+				    $bg
+				    	.removeClass()
+				    	.addClass('bgwidth');
+				}
+							
+			}
+			                   			
+			theWindow.resize(resizeBg).trigger("resize");
+		
+		});
+  </script>
 </head>
 <!-- END:head -->
 <body class="<%= controller.controller_name %>">
+	<%= image_tag("1.jpg", :id=>"bg", :alt=>"") %>
 	<div id="header">																																																																								
 		<div id="header_inside">
 			<%= image_tag("header.jpg",:alt=>"header", :width=>"999", :height=>"222", :border=>"0", :usemap=>"#Map") %> <br />																																										
@@ -33,7 +60,7 @@
 		        <% end %>
 		      <% end %>
 		    <!-- END:hidden_div -->
-				<img src="title1.gif" alt="" width="174" height="30" /><br />																																																																		
+		    <%= image_tag("title1.gif", :width=>"174", :height=>"30", :alt=>"") %> <br />																																																																		
 				<ul id="list">
 					<li class="color"><a href="#">Illum secundum</a></li>
 					<li><a href="#">Tamen causa ut diam</a></li>
