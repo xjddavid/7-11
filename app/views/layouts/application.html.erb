@@ -9,13 +9,11 @@
   
   <script>
   	$(window).load(function() {    
-
+			//whole page display background
 			var theWindow        = $(window),
 			    $bg              = $("#bg"),
 			    aspectRatio      = $bg.width() / $bg.height();
-			    			    		
 			function resizeBg() {
-				
 				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
 				    $bg
 				    	.removeClass()
@@ -25,11 +23,19 @@
 				    	.removeClass()
 				    	.addClass('bgwidth');
 				}
-							
 			}
-			                   			
 			theWindow.resize(resizeBg).trigger("resize");
-		
+			
+			// Photo gallery > Vertical
+			$(".photosgallery-vertical").sliderkit({
+				circular:true,
+				mousewheel:true,
+				shownavitems:4,
+				verticalnav:true,
+				navclipcenter:true,
+				auto:false
+			});
+
 		});
   </script>
 </head>
@@ -47,6 +53,13 @@
 				<li><a href="localhost:3000/login" class="but5">My Account</a></li>
 				<li><%= link_to t('.contact'), contacts_path, :class=>"but6"%></li>
 			</ul>
+			
+			<map name="Map">
+       <area shape="rect" coords="78,45,312,119" href= "http://localhost:3000/">
+       <area shape="poly" coords="670,87,719,78,727,123,677,130" href= "http://localhost:3000/">
+       <area shape="poly" coords="776,124,818,152,793,189,751,160" href="http://localhost:3000/login">
+       <area shape="poly" coords="834,52,885,61,878,105,828,96" href="#">
+			</map>
 		</div>
 	</div>
 	
@@ -88,6 +101,100 @@
 		      <% end %>
 		    </ul>
     	</div>
+    	
+    	<div id="slide">
+				<!-- Start photosgallery-vertical -->
+				<div class="sliderkit photosgallery-vertical">
+					<div class="sliderkit-nav">						
+						<div class="sliderkit-nav-clip">
+							<ul>
+								<li>  <%= link_to(image_tag("sample-01.jpg"),"#") %> </li>
+								<li>  <%= link_to(image_tag("sample-02.jpg"),"#") %> </li>
+								<li>  <%= link_to(image_tag("sample-03.jpg"),"#") %> </li>
+								<li>  <%= link_to(image_tag("sample-04.jpg"),"#") %> </li>
+								<li>  <%= link_to(image_tag("sample-05.jpg"),"#") %> </li>
+								<li>  <%= link_to(image_tag("sample-06.jpg"),"#") %> </li>
+								<li>  <%= link_to(image_tag("sample-07.jpg"),"#") %> </li>
+							</ul>
+						</div>
+						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev"><a rel="nofollow" href="#" title="Previous line"><span>Previous</span></a></div>
+						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next"><a rel="nofollow" href="#" title="Next line"><span>Next</span></a></div>
+					</div>
+					<div class="sliderkit-panels">
+						<div class="sliderkit-panel">
+							<%= link_to(image_tag("sample-01.jpg"),"#") %>
+							<div class="sliderkit-panel-textbox">
+								<div class="sliderkit-panel-text">
+									<h4>sample-01.jpg</h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								</div>
+								<div class="sliderkit-panel-overlay"></div>
+							</div>
+						</div>
+						<div class="sliderkit-panel">
+							<%= link_to(image_tag("sample-02.jpg"),"#") %>
+							<div class="sliderkit-panel-textbox">
+								<div class="sliderkit-panel-text">
+									<h4>sample-02.jpg</h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+								</div>
+								<div class="sliderkit-panel-overlay"></div>
+							</div>
+						</div>
+						<div class="sliderkit-panel">
+							<%= link_to(image_tag("sample-03.jpg"),"#") %>
+							<div class="sliderkit-panel-textbox">
+								<div class="sliderkit-panel-text">
+									<h4>sample-03.jpg</h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+								</div>
+								<div class="sliderkit-panel-overlay"></div>
+							</div>
+						</div>
+						<div class="sliderkit-panel">
+							<%= link_to(image_tag("sample-04.jpg"),"#") %>
+							<div class="sliderkit-panel-textbox">
+								<div class="sliderkit-panel-text">
+									<h4>sample-04.jpg</h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+								</div>
+								<div class="sliderkit-panel-overlay"></div>
+							</div>
+						</div>
+						<div class="sliderkit-panel">
+							<%= link_to(image_tag("sample-05.jpg"),"#") %>
+							<div class="sliderkit-panel-textbox">
+								<div class="sliderkit-panel-text">
+									<h4>sample-05.jpg</h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+								</div>
+								<div class="sliderkit-panel-overlay"></div>
+							</div>
+						</div>
+						<div class="sliderkit-panel">
+							<%= link_to(image_tag("sample-06.jpg"),"#") %>
+							<div class="sliderkit-panel-textbox">
+								<div class="sliderkit-panel-text">
+									<h4>sample-06.jpg</h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								</div>
+								<div class="sliderkit-panel-overlay"></div>
+							</div>
+						</div>
+						<div class="sliderkit-panel">
+							<img src="../lib/images/photos/sample-07.jpg" alt="[Alternative text]" />
+							<div class="sliderkit-panel-textbox">
+								<div class="sliderkit-panel-text">
+									<h4>sample-07.jpg</h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+								</div>
+								<div class="sliderkit-panel-overlay"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // end of photosgallery-vertical -->
+			</div>
     	
 	    <div id="main_block">
 	      <%= yield %>
