@@ -33,7 +33,9 @@
 				shownavitems:4,
 				verticalnav:true,
 				navclipcenter:true,
-				auto:false
+				auto:true,
+				panelfxspeed:400,
+				timer:true
 			});
 
 		});
@@ -101,100 +103,6 @@
 		      <% end %>
 		    </ul>
     	</div>
-    	
-    	<div id="slide">
-				<!-- Start photosgallery-vertical -->
-				<div class="sliderkit photosgallery-vertical">
-					<div class="sliderkit-nav">						
-						<div class="sliderkit-nav-clip">
-							<ul>
-								<li>  <%= link_to(image_tag("sample-01.jpg"),"#") %> </li>
-								<li>  <%= link_to(image_tag("sample-02.jpg"),"#") %> </li>
-								<li>  <%= link_to(image_tag("sample-03.jpg"),"#") %> </li>
-								<li>  <%= link_to(image_tag("sample-04.jpg"),"#") %> </li>
-								<li>  <%= link_to(image_tag("sample-05.jpg"),"#") %> </li>
-								<li>  <%= link_to(image_tag("sample-06.jpg"),"#") %> </li>
-								<li>  <%= link_to(image_tag("sample-07.jpg"),"#") %> </li>
-							</ul>
-						</div>
-						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev"><a rel="nofollow" href="#" title="Previous line"><span>Previous</span></a></div>
-						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next"><a rel="nofollow" href="#" title="Next line"><span>Next</span></a></div>
-					</div>
-					<div class="sliderkit-panels">
-						<div class="sliderkit-panel">
-							<%= link_to(image_tag("sample-01.jpg"),"#") %>
-							<div class="sliderkit-panel-textbox">
-								<div class="sliderkit-panel-text">
-									<h4>sample-01.jpg</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-								</div>
-								<div class="sliderkit-panel-overlay"></div>
-							</div>
-						</div>
-						<div class="sliderkit-panel">
-							<%= link_to(image_tag("sample-02.jpg"),"#") %>
-							<div class="sliderkit-panel-textbox">
-								<div class="sliderkit-panel-text">
-									<h4>sample-02.jpg</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
-								</div>
-								<div class="sliderkit-panel-overlay"></div>
-							</div>
-						</div>
-						<div class="sliderkit-panel">
-							<%= link_to(image_tag("sample-03.jpg"),"#") %>
-							<div class="sliderkit-panel-textbox">
-								<div class="sliderkit-panel-text">
-									<h4>sample-03.jpg</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-								</div>
-								<div class="sliderkit-panel-overlay"></div>
-							</div>
-						</div>
-						<div class="sliderkit-panel">
-							<%= link_to(image_tag("sample-04.jpg"),"#") %>
-							<div class="sliderkit-panel-textbox">
-								<div class="sliderkit-panel-text">
-									<h4>sample-04.jpg</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-								</div>
-								<div class="sliderkit-panel-overlay"></div>
-							</div>
-						</div>
-						<div class="sliderkit-panel">
-							<%= link_to(image_tag("sample-05.jpg"),"#") %>
-							<div class="sliderkit-panel-textbox">
-								<div class="sliderkit-panel-text">
-									<h4>sample-05.jpg</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-								</div>
-								<div class="sliderkit-panel-overlay"></div>
-							</div>
-						</div>
-						<div class="sliderkit-panel">
-							<%= link_to(image_tag("sample-06.jpg"),"#") %>
-							<div class="sliderkit-panel-textbox">
-								<div class="sliderkit-panel-text">
-									<h4>sample-06.jpg</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-								</div>
-								<div class="sliderkit-panel-overlay"></div>
-							</div>
-						</div>
-						<div class="sliderkit-panel">
-							<img src="../lib/images/photos/sample-07.jpg" alt="[Alternative text]" />
-							<div class="sliderkit-panel-textbox">
-								<div class="sliderkit-panel-text">
-									<h4>sample-07.jpg</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-								</div>
-								<div class="sliderkit-panel-overlay"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- // end of photosgallery-vertical -->
-			</div>
     	
 	    <div id="main_block">
 	      <%= yield %>
