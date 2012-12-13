@@ -34,6 +34,7 @@
 				verticalnav:true,
 				navclipcenter:true,
 				auto:true,
+				autostill:true,
 				panelfxspeed:400,
 				timer:true
 			});
@@ -98,6 +99,8 @@
 	          <% if User.find_by_id(session[:user_id]).user_type == "admin"%>
 		          <li><%= link_to 'Products', products_path %></li>
 		          <li><%= link_to 'Users',    users_path    %></li>
+		          <li><%= link_to 'Admin',    admin_path    %></li>
+		          <li><%= link_to 'Slider',   slides_path    %></li>
 	          <% end %>
 		        <li> <%= button_to 'Logout', logout_path, method: :delete   %> </li>
 		      <% end %>

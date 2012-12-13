@@ -1,5 +1,7 @@
 Depot::Application.routes.draw do
 
+  resources :slides
+
   resources :categories
 
   get "contacts/index"
@@ -12,6 +14,8 @@ Depot::Application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
+  
+  match "/slides/pro2slider/:id" => "slides#pro2slider"
   
   get 'register' => 'users#new'
   scope '(:locale)' do

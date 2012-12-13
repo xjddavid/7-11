@@ -119,10 +119,10 @@ Here is a compact version :
 .photosgallery-vertical .sliderkit-go-next{top:0;right:0;}
 
 /* Panel */
-.photosgallery-vertical .sliderkit-panel{top:0;left:0;width:500px;height:335px;}
+.photosgallery-vertical .sliderkit-panel{top:0;left:100px;width:500px;height:335px;}
 
 /* Panel > Textbox */
 .photosgallery-vertical .sliderkit-panel .sliderkit-panel-textbox{bottom:0;left:0;height:85px;width:500px;}
 .photosgallery-vertical .sliderkit-panel .sliderkit-panel-text{height:65px;padding:10px 15px 10px 115px;font-size:0.9em;color:#fff;}
 .photosgallery-vertical .sliderkit-panel .sliderkit-panel-text h4{height:auto;margin:0 0 7px;line-height:1.1em;font-size:1.1em;font-weight:bold;border:none;}
-.photosgallery-vertical .sliderkit-panel .sliderkit-panel-overlay{height:85px;width:500px;background:#000;opacity:0.6;}
+.photosgallery-vertical .sliderkit-panel .sliderkit-panel-overlay{height:85px;width:500px;background:#000;opacity:1;}

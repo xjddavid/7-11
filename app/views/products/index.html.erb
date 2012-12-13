@@ -20,7 +20,8 @@
       <%= link_to 'Show', product %><br/>
       <%= link_to 'Edit', edit_product_path(product) %><br/>
       <%= link_to 'Destroy', product, method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
+                  data: { confirm: 'Are you sure?' } %><br/>
+      <%= link_to 'Promote in slider', "/slides/pro2slider/#{product.id}" %><br/>
     </td>
   </tr>
 <% end %>
